@@ -1,0 +1,127 @@
+.settings-header {
+    margin-bottom: 1.5rem;
+}
+
+.settings-header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.settings-header p {
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.settings-group {
+    margin-bottom: 1.5rem;
+}
+
+.group-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    margin-top: -0.4rem;
+}
+
+/* Background preset image buttons */
+.bg-presets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.bg-preset-btn {
+    position: relative;
+    height: 110px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    border: 2.5px solid transparent;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.bg-preset-btn:hover {
+    transform: scale(1.02);
+}
+
+.bg-preset-btn.active {
+    border-color: var(--accent);
+}
+
+.bg-preset-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.35rem 0.6rem;
+    backdrop-filter: blur(4px);
+}
+
+.bg-preset-check {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.group-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.setting-row:last-child {
+    border-bottom: none;
+}
+
+.setting-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.setting-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.setting-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.settings-info-card {
+    background: var(--accent-light);
+    border-color: var(--accent-soft);
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}

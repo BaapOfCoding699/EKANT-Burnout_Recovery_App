@@ -1,0 +1,272 @@
+/* TaskCard component styles — imported from Dashboard.css */
+
+.task-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 1.5rem;
+}
+
+.change-tier-btn {
+    font-size: 0.82rem;
+    width: 100%;
+    padding: 0.55rem 1rem;
+}
+
+.task-focus-card {
+    animation-duration: 0.4s;
+    transition: transform 0.3s ease;
+}
+
+.task-celebrating {
+    animation: popIn 0.5s ease;
+    border-color: var(--accent);
+}
+
+.task-focus-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.task-meta-left {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.category-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.28rem 0.75rem;
+    border-radius: 20px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.tier-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--border);
+    padding: 0.22rem 0.6rem;
+    border-radius: 20px;
+}
+
+/* Category colours */
+.cat-wellness {
+    background: #e8f5e9;
+    color: #3a7d44;
+    border: 1px solid #b7dfc0;
+}
+
+.cat-physical {
+    background: #fff3e0;
+    color: #a0522d;
+    border: 1px solid #f5c6a0;
+}
+
+.cat-hobby {
+    background: #f3e8fd;
+    color: #7b35b5;
+    border: 1px solid #d9b8f5;
+}
+
+.cat-social {
+    background: #fce4ec;
+    color: #c2185b;
+    border: 1px solid #f48fb1;
+}
+
+.cat-adventure {
+    background: #fff8e1;
+    color: #e65100;
+    border: 1px solid #ffcc80;
+}
+
+.cat-music {
+    background: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #90caf9;
+}
+
+.cat-research {
+    background: #e8f4fd;
+    color: #0277bd;
+    border: 1px solid #81d4fa;
+}
+
+.cat-habit {
+    background: #f1f8e9;
+    color: #558b2f;
+    border: 1px solid #c5e1a5;
+}
+
+.task-focus-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+}
+
+.task-focus-desc {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.exp-hints {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.task-reward-badge {
+    background: rgba(184, 151, 42, 0.12);
+    color: var(--exp);
+    border: 1px solid rgba(184, 151, 42, 0.3);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+}
+
+.proof-bonus {
+    background: rgba(74, 124, 89, 0.1);
+    color: var(--accent);
+    border-color: rgba(74, 124, 89, 0.3);
+}
+
+.task-complete-btn {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+
+.task-done-state {
+    text-align: center;
+    padding: 1.5rem 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.done-emoji {
+    font-size: 2.5rem;
+    animation: popIn 0.4s ease;
+}
+
+.done-msg {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 1.05rem;
+}
+
+.all-done-msg {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Proof section */
+.proof-section {
+    margin-bottom: 1.2rem;
+}
+
+.proof-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.optional-tag {
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-left: 0.3rem;
+}
+
+.proof-upload-btn {
+    width: 100%;
+    border: 1.5px dashed rgba(184, 151, 42, 0.5);
+    background: rgba(184, 151, 42, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 0.8rem;
+    font-size: 0.88rem;
+    color: var(--exp);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.proof-upload-btn:hover {
+    background: rgba(184, 151, 42, 0.15);
+    border-style: solid;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(184, 151, 42, 0.15);
+}
+
+.proof-preview-wrap {
+    position: relative;
+}
+
+.proof-preview {
+    width: 100%;
+    max-height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.proof-remove {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+}
+
+/* Experience Journal Textarea */
+.experience-input-section {
+    margin-bottom: 1.5rem;
+}
+
+.experience-textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 0.8rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    resize: vertical;
+    min-height: 80px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.experience-textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02), 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.experience-textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+}

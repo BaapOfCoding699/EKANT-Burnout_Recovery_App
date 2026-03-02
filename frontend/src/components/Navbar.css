@@ -1,0 +1,93 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 2rem;
+    background: rgba(250, 248, 244, 0.88);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-logo {
+    font-size: 1.4rem;
+}
+
+.navbar-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--accent);
+}
+
+.navbar-links {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.nav-link {
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.88rem;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+    background: var(--accent-light);
+}
+
+.nav-link.active {
+    color: var(--accent);
+    background: var(--accent-light);
+    border-color: rgba(74, 124, 89, 0.25);
+    font-weight: 600;
+}
+
+/* ── User avatar + logout ───────── */
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.navbar-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid rgba(74, 124, 89, 0.4);
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.navbar-avatar-fallback {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(74, 124, 89, 0.4);
+}
+
+.navbar-logout {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.78rem;
+    border-radius: 8px;
+}

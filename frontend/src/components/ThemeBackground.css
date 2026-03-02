@@ -1,0 +1,52 @@
+/* EKANT Theme Background — Crisp image, no blur */
+
+.theme-bg-wrap {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.theme-bg-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: high-quality;
+    /* NO transform, NO blur, NO animation — perfectly crisp still image */
+}
+
+/* Subtle warm tint for card readability — NO backdrop-filter blur */
+.theme-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(250, 247, 242, 0.40);
+}
+
+/* Video overlay fills the whole screen natively */
+.theme-bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    /* Above image, below tint overlay */
+}
+
+/* Smooth fade-in when switching videos */
+.fadeIn {
+    animation: simpleFadeIn 1s ease-in forwards;
+}
+
+@keyframes simpleFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,168 @@
+.focus-timer-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(25, 30, 25, 0.4);
+    /* Darkens the active video background */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: white;
+}
+
+.exit-zen-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-color: rgba(255, 255, 255, 0.2);
+    z-index: 1001;
+}
+
+.exit-zen-btn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.zen-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.zen-title {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.zen-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+/* Timer SVG & Display */
+.timer-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.timer-ring-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+}
+
+.timer-ring-progress {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.9);
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s linear;
+}
+
+.timer-display {
+    position: relative;
+    z-index: 2;
+}
+
+.time-text {
+    font-size: 5rem;
+    font-weight: 200;
+    font-family: monospace;
+    letter-spacing: -2px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Controls */
+.timer-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    min-height: 80px;
+}
+
+.btn-large {
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+    border-radius: 3rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+}
+
+.btn-large:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.preset-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.preset-btn:hover {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.preset-btn.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-color: white;
+    font-weight: 500;
+}
+
+.timer-presets {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* Complete State */
+.session-complete {
+    text-align: center;
+}
+
+.session-complete h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.session-complete p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.mt-2 {
+    margin-top: 1rem;
+}

@@ -1,0 +1,232 @@
+/* Premium SVG Animations — Shared Keyframes
+   JJK / Kung Fu Panda style: organic, wind-driven, calm */
+
+/* ── Bamboo & Leaf Sway ─────────────────────────── */
+@keyframes bamboosway {
+    0% {
+        transform: rotate(0deg) skewX(0deg);
+    }
+
+    20% {
+        transform: rotate(1.2deg) skewX(0.3deg);
+    }
+
+    50% {
+        transform: rotate(-0.8deg) skewX(-0.2deg);
+    }
+
+    70% {
+        transform: rotate(1.5deg) skewX(0.4deg);
+    }
+
+    100% {
+        transform: rotate(0deg) skewX(0deg);
+    }
+}
+
+@keyframes leafsway {
+    0% {
+        transform: rotate(-5deg) scaleX(1);
+    }
+
+    30% {
+        transform: rotate(7deg) scaleX(0.97);
+    }
+
+    60% {
+        transform: rotate(-3deg) scaleX(1.02);
+    }
+
+    100% {
+        transform: rotate(-5deg) scaleX(1);
+    }
+}
+
+@keyframes leaffall {
+    0% {
+        transform: translate(0, -5%) rotate(0deg);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 0.85;
+    }
+
+    40% {
+        transform: translate(40px, 35vh) rotate(120deg);
+    }
+
+    70% {
+        transform: translate(-20px, 65vh) rotate(260deg);
+        opacity: 0.6;
+    }
+
+    95% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(10px, 102vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ── Water & Ripple ─────────────────────────────── */
+@keyframes waterripple {
+    0% {
+        transform: scaleX(1) translateY(0);
+        opacity: 0.18;
+    }
+
+    50% {
+        transform: scaleX(1.03) translateY(-3px);
+        opacity: 0.28;
+    }
+
+    100% {
+        transform: scaleX(1) translateY(0);
+        opacity: 0.18;
+    }
+}
+
+@keyframes shimmerwave {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+/* ── Bird Flight ────────────────────────────────── */
+@keyframes birdflight {
+    0% {
+        transform: translate(-80px, 0) opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    45% {
+        transform: translate(42vw, -40px);
+    }
+
+    55% {
+        transform: translate(55vw, -30px);
+    }
+
+    95% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translate(110vw, -60px);
+        opacity: 0;
+    }
+}
+
+@keyframes wingflap {
+
+    0%,
+    100% {
+        d: path("M0,0 Q5,-6 10,0");
+    }
+
+    50% {
+        d: path("M0,0 Q5,2 10,0");
+    }
+}
+
+/* ── Cloud Drift ────────────────────────────────── */
+@keyframes clouddrift {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(18px) translateY(-5px);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+/* ── Grass Sway ─────────────────────────────────── */
+@keyframes grasssway {
+    0% {
+        transform: rotate(0deg);
+        transform-origin: bottom center;
+    }
+
+    25% {
+        transform: rotate(3deg);
+        transform-origin: bottom center;
+    }
+
+    50% {
+        transform: rotate(-2deg);
+        transform-origin: bottom center;
+    }
+
+    75% {
+        transform: rotate(4deg);
+        transform-origin: bottom center;
+    }
+
+    100% {
+        transform: rotate(0deg);
+        transform-origin: bottom center;
+    }
+}
+
+/* ── Light Rays ─────────────────────────────────── */
+@keyframes raypulse {
+    0% {
+        opacity: 0.06;
+    }
+
+    50% {
+        opacity: 0.18;
+    }
+
+    100% {
+        opacity: 0.06;
+    }
+}
+
+/* ── Dust Float ─────────────────────────────────── */
+@keyframes dustfloat {
+    0% {
+        transform: translate(0, 0) opacity: 0.3;
+    }
+
+    33% {
+        transform: translate(12px, -18px) opacity: 0.8;
+    }
+
+    66% {
+        transform: translate(-8px, -8px) opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(0, 0) opacity: 0.3;
+    }
+}
+
+/* ── Spark / Firefly ────────────────────────────── */
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}

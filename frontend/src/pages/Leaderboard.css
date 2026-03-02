@@ -1,0 +1,182 @@
+/* Leaderboard — White Zen Theme */
+
+.lb-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.lb-header h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+.lb-header p {
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+}
+
+/* Podium */
+.podium {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.podium-card {
+    text-align: center;
+    padding: 1.4rem 1.1rem;
+    min-width: 155px;
+    transition: transform 0.2s ease;
+}
+
+.podium-card:hover {
+    transform: translateY(-4px);
+}
+
+.rank-1 {
+    border-color: #c8a217;
+    box-shadow: 0 4px 20px rgba(184, 151, 42, 0.2);
+    order: 2;
+    min-height: 230px;
+}
+
+.rank-2 {
+    border-color: #adb5bd;
+    order: 1;
+    min-height: 200px;
+}
+
+.rank-3 {
+    border-color: #cd7f32;
+    order: 3;
+    min-height: 190px;
+}
+
+.podium-medal {
+    font-size: 1.8rem;
+}
+
+.podium-avatar {
+    font-size: 2.2rem;
+    margin: 0.4rem 0;
+}
+
+.podium-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.podium-exp {
+    color: var(--exp);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.podium-streak {
+    color: var(--streak);
+    font-size: 0.8rem;
+}
+
+.podium-proof {
+    width: 100%;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 0.75rem;
+    border: 1px solid var(--border);
+}
+
+/* Table */
+.lb-table {
+    overflow-x: auto;
+}
+
+.lb-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.lb-table th {
+    text-align: left;
+    padding: 0.7rem 1rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-secondary);
+}
+
+.lb-table th:first-child {
+    border-radius: 8px 0 0 0;
+}
+
+.lb-table th:last-child {
+    border-radius: 0 8px 0 0;
+}
+
+.lb-table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.93rem;
+}
+
+.lb-table tr:last-child td {
+    border-bottom: none;
+}
+
+.lb-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.lb-table tbody tr:hover {
+    background: var(--bg-secondary);
+}
+
+.my-row td {
+    color: var(--accent) !important;
+    font-weight: 600;
+}
+
+.player-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.player-avatar {
+    font-size: 1.15rem;
+}
+
+.you-tag {
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 0.12rem 0.45rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table-proof {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.no-proof {
+    color: var(--text-muted);
+}

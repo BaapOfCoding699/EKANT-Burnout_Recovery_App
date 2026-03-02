@@ -1,0 +1,81 @@
+/* Bamboo Background — fixed behind the whole page */
+.bamboo-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    /* can't click on bamboo */
+    z-index: 0;
+    /* behind everything */
+    overflow: hidden;
+}
+
+/* Individual stalk */
+.bamboo-stalk {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-origin: bottom center;
+    animation: stalksway linear infinite alternate;
+}
+
+/* Each bamboo segment (creates the classic divided bamboo look) */
+.bamboo-segment {
+    width: 100%;
+    background: linear-gradient(to right,
+            #8fbc6e 0%,
+            #a8d180 30%,
+            #7aaa58 70%,
+            #6a9940 100%);
+    border-bottom: 2px solid #5a8030;
+    /* the node/joint */
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+/* Leaf shape using CSS clip-path */
+.bamboo-leaf {
+    position: absolute;
+    width: 36px;
+    height: 14px;
+    background: linear-gradient(135deg, #7fbf55, #5a9030);
+    border-radius: 0 100% 0 100%;
+    animation: leafsway ease-in-out infinite alternate;
+    transform-origin: left center;
+}
+
+.bamboo-leaf.leaf-left {
+    right: 100%;
+    border-radius: 100% 0 100% 0;
+    transform-origin: right center;
+}
+
+.bamboo-leaf.leaf-right {
+    left: 100%;
+}
+
+/* Stalk sways gently */
+@keyframes stalksway {
+    0% {
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        transform: rotate(2deg);
+    }
+}
+
+/* Leaf flutter */
+@keyframes leafsway {
+    0% {
+        transform: rotate(-10deg) scaleX(1);
+    }
+
+    100% {
+        transform: rotate(8deg) scaleX(0.95);
+    }
+}

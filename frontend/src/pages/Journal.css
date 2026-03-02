@@ -1,0 +1,141 @@
+.journal-page {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.journal-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.journal-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+.journal-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Empty State */
+.journal-empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--glass-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur));
+}
+
+.empty-emoji {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.journal-empty h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.journal-empty p {
+    color: var(--text-secondary);
+}
+
+.journal-loading {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Grid */
+.journal-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding-bottom: 3rem;
+}
+
+.journal-card {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.journal-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.journal-task-title {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.journal-date {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.journal-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-top: 0.5rem;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--primary-color);
+}
+
+.journal-text.empty-text {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    background: transparent;
+    padding: 0;
+    border-left: none;
+    opacity: 0.7;
+}
+
+.journal-proof-badge {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Category Badge reuse from TaskCard */
+.category-badge {
+    align-self: flex-start;
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(255, 255, 255, 0.6);
+}

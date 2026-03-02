@@ -1,0 +1,314 @@
+/* ============================================
+   EKANT — Japanese Zen Theme (White / Off-White)
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+
+/* ---------- THEME VARIABLES ---------- */
+:root {
+  --bg-primary: #f5f3ef;
+  --bg-secondary: #ede9e1;
+  --bg-card: #faf8f4;
+  --bg-card-hover: #ffffff;
+  --accent: #4a7c59;
+  --accent-soft: #6b9e7a;
+  --accent-light: #d4e9da;
+  --text-primary: #111111;
+  /* near-black for max legibility */
+  --text-secondary: #2a2a2a;
+  /* strong charcoal — excellent on glass */
+  --text-muted: #4a4a4a;
+  /* medium-dark gray — readable on any background */
+  --streak: #c8622a;
+  --exp: #a07820;
+  /* slightly richer gold */
+  --border: #ddd8cf;
+  --border-strong: #bbb3a8;
+  --shadow: rgba(80, 60, 40, 0.1);
+  --shadow-md: rgba(80, 60, 40, 0.15);
+}
+
+/* ---------- RESET & BASE ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+
+/* ---------- GLASSMORPHIC PANELS (CARDS) ---------- */
+.card {
+  background: rgba(255, 255, 255, 0.28);
+  /* Slightly more opaque for readability */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+/* All text inside glassmorphic cards gets a subtle white drop-shadow
+   so letters are readable regardless of what the live background shows */
+.card * {
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7), 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+/* Headings get a stronger lift */
+.card h1,
+.card h2,
+.card h3,
+.card h4 {
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9), 0 0 2px rgba(255, 255, 255, 0.6);
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.36);
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- BUTTONS — Unified Glassmorphism System ---------- */
+
+/* ─ Shared base: shape, font, transitions, backdrop */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.78rem 1.5rem;
+  border-radius: 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  text-decoration: none;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Shared top-highlight shimmer across all button variants */
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.22) 0%, transparent 55%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* ─ PRIMARY: solid green glass — for all main CTAs */
+.btn-primary {
+  background: linear-gradient(145deg, #5aa070 0%, #3d7050 100%);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 5px 18px rgba(58, 112, 78, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(145deg, #67b07d 0%, #4a8c5e 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(58, 112, 78, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+/* ─ GHOST: frosted white glass — for secondary/back actions */
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.38);
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-ghost:active {
+  transform: translateY(0);
+}
+
+/* ─ DISABLED state for all buttons */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------- BADGES ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge-streak {
+  background: rgba(200, 98, 42, 0.1);
+  color: var(--streak);
+  border: 1px solid rgba(200, 98, 42, 0.25);
+}
+
+.badge-exp {
+  background: rgba(184, 151, 42, 0.1);
+  color: var(--exp);
+  border: 1px solid rgba(184, 151, 42, 0.25);
+}
+
+/* ---------- PROGRESS BAR ---------- */
+.progress-bar-bg {
+  background: var(--bg-secondary);
+  border-radius: 999px;
+  height: 9px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-soft), var(--accent));
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* ---------- PAGE LAYOUT ---------- */
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  animation: fadeIn 0.35s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- TOGGLE SWITCH ---------- */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: var(--border-strong);
+  border-radius: 24px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.toggle input:checked+.toggle-slider {
+  background: var(--accent);
+}
+
+.toggle input:checked+.toggle-slider::before {
+  transform: translateX(20px);
+}
