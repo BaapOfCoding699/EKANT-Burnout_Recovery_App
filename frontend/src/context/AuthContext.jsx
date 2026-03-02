@@ -2,7 +2,7 @@
 // AuthContext.jsx — Global authentication state for the whole app
 // ─────────────────────────────────────────────────────────────────────────────
 import { createContext, useContext, useEffect, useState } from 'react'
-import { onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth'
+import { onAuthStateChanged, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import { auth, googleProvider } from '../firebase'
 
 // Create the context
@@ -40,7 +40,16 @@ export function AuthProvider({ children }) {
         }
     }
 
-    const value = { user, loading, loginWithGoogle, logout }
+    async function signUpWithEmail(email, password) {
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
+
+    async function loginWithEmail(email, password) {
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    // ─── Return Pack ──────────────────────────────────────────────────────────
+    const value = { user, loading, loginWithGoogle, signUpWithEmail, loginWithEmail, logout }
 
     // Don't render children until we know the auth state (avoids flash)
     if (loading) {
