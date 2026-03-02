@@ -27,26 +27,28 @@ function AppInner() {
       <ThemeBackground visible={settings.liveBg} selectedId={settings.selectedBg} />
       {user && <Navbar />}
       <OnboardingOverlay />
-      <Routes>
-        {/* Public route */}
-        <Route
-          path="/login"
-          element={user ? <Navigate to="/dashboard" replace /> : <Login />}
-        />
+      <div className="app-content">
+        <Routes>
+          {/* Public route */}
+          <Route
+            path="/login"
+            element={user ? <Navigate to="/dashboard" replace /> : <Login />}
+          />
 
-        {/* Protected routes — all redirect to /login if not authenticated */}
-        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-        <Route path="/leaderboard" element={<ProtectedRoute><Leaderboard /></ProtectedRoute>} />
-        <Route path="/journal" element={<ProtectedRoute><Journal /></ProtectedRoute>} />
-        <Route path="/focus" element={<ProtectedRoute><FocusTimer /></ProtectedRoute>} />
-        <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-        <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
-        <Route path="/mystery" element={<ProtectedRoute><MysteryPage /></ProtectedRoute>} />
-        <Route path="/breathe" element={<ProtectedRoute><Breathe /></ProtectedRoute>} />
+          {/* Protected routes — all redirect to /login if not authenticated */}
+          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/leaderboard" element={<ProtectedRoute><Leaderboard /></ProtectedRoute>} />
+          <Route path="/journal" element={<ProtectedRoute><Journal /></ProtectedRoute>} />
+          <Route path="/focus" element={<ProtectedRoute><FocusTimer /></ProtectedRoute>} />
+          <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
+          <Route path="/mystery" element={<ProtectedRoute><MysteryPage /></ProtectedRoute>} />
+          <Route path="/breathe" element={<ProtectedRoute><Breathe /></ProtectedRoute>} />
 
-        {/* Catch-all */}
-        <Route path="*" element={<Navigate to={user ? '/dashboard' : '/login'} replace />} />
-      </Routes>
+          {/* Catch-all */}
+          <Route path="*" element={<Navigate to={user ? '/dashboard' : '/login'} replace />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   )
 }

@@ -1,8 +1,23 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  /* Dynamic viewport height for modern mobile browsers */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* Prevent the body from ever scrolling */
+}
+
+/* This class wraps the <Routes> so only the page content scrolls */
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 1;
+  -webkit-overflow-scrolling: touch;
+  /* Momentum scrolling on iOS */
 }
 
 .logo {
@@ -11,9 +26,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +39,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
