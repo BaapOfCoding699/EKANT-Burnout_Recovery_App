@@ -39,7 +39,7 @@ jobs:
       uses: android-actions/setup-android@v2
       
     - name: Give permission to gradlew
-      run: chmod +x android/gradlew
+      run: chmod +x ./gradlew
       
     - name: Build APK
       working-directory: ./frontend/android
