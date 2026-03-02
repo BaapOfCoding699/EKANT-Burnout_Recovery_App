@@ -37,8 +37,9 @@ jobs:
 
     - name: Setup Android SDK
       uses: android-actions/setup-android@v2
+      
     - name: Give permission to gradlew
-      run: chmod +X ./gradlew
+      run: chmod +x andoid/gradlew
       
     - name: Build APK
       working-directory: ./frontend/android
