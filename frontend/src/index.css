@@ -42,11 +42,28 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+bodyhtml {
   font-family: 'Outfit', sans-serif;
-  background-color: var(--bg-primary);
   color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+  /* Prevents mobile rubber-banding */
+}
+
+body {
+  line-height: 1.6;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overscroll-behavior-y: none;
+  -webkit-user-select: none;
+  /* Prevent accidental text highlighting on mobile */
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  /* Remove blue tap highlight on Android */
 }
 
 a {
